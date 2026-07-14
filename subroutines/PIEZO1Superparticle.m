@@ -10,7 +10,7 @@ function [Superparticle] = PIEZO1Superparticle(result);
     result1 = [];
 
 %% choose options
-    PlotSuperparticle = false;
+    PlotSuperparticle = true;
 
 %% read coordinates
     AllTrimerCoord = result.TrimerCoord;
@@ -19,9 +19,10 @@ function [Superparticle] = PIEZO1Superparticle(result);
 %% select if final rotation should be applied to align the closest points to vertex A (1 = perform additional rotation alignment; 0 = no additional alignment)
     
         option = 1;
-    
+  
+
 %% calculate coordinates of the references trimer
-    P2dist=26; % set PIEZO reference trimer interblade distance; this value does not affect the results
+    P2dist=23; % set PIEZO reference trimer interblade distance; this value does not affect the results
     hP2trimer=(sqrt(3)/2)*P2dist; %calcluate heigth of triangle
     rP2trimer=(sqrt(3)/3)*P2dist; %calculate radius of triangle (distance from centroid to vertex
     refA = [(-P2dist/2) (-(hP2trimer-rP2trimer)) 0];
